@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-
+import { useTheme } from './hooks/useTheme'
 const Navbar = () => {
-  const [darkMode, setDarkMode] = useState(false);
+  //  calling the useTheme function and passing it in the initial state which is darkMode
+  const [darkMode, setDarkMode] = useTheme();
   const toggleMode = e => {
     e.preventDefault();
+    //setting the state of setDarkMode to the opposite of darkMode
     setDarkMode(!darkMode);
   };
   return (
